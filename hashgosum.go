@@ -41,11 +41,10 @@ func fileToString(foundFile string) string {
   if err != nil {
     log.Fatal("File not found.")
   }
-  s_file := string(f_file)
-  return s_file
+  return string(f_file)
 }
 
-func parseFlags() {
+func main() {
   flag.Parse()
 
   if *isHelp {
@@ -78,8 +77,4 @@ func parseFlags() {
   } else {
     log.Fatal("Empty message, try again.")
   }
-}
-
-func main() {
-  parseFlags()
 }

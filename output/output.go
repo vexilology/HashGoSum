@@ -2,31 +2,35 @@ package output
 
 import (
   "os"
-  "log"
+  "fmt"
 )
 
-func GlobErr(err error) {
-  if err != nil {
-    log.Fatal(err)
-  }
-}
-
-func CreateAndSave(input, create string) {
+func CreateAndSave(input, create string) error {
   if create != "" {
     file, err := os.Create(create)
-    GlobErr(err)
+    if err != nil {
+      return fmt.Errorf("%w", err)
+    }
 
     _, err = file.WriteString(input)
-    GlobErr(err)
+    if err != nil {
+      return fmt.Errorf("%w", err)
+    }
 
     file.Close()
   } else {
     file, err := os.Create("log.txt")
-    GlobErr(err)
+    if err != nil {
+      return fmt.Errorf("%w", err)
+    }
 
     _, err = file.WriteString(input)
-    GlobErr(err)
+    if err != nil {
+      return fmt.Errorf("%w", err)
+    }
 
     file.Close()
   }
+
+  return nil
 }
