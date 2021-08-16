@@ -26,5 +26,6 @@ fix:
 
 tests:
 	go test -v
+	cd output && go test -v
 	cd algorithm && go test -bench=.
 	cd algorithm && go test -v

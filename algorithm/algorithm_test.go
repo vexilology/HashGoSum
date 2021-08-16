@@ -326,7 +326,6 @@ func TestTIGER192Message(t *testing.T) {
     f := FoundTIGER192(r.result)[14:]
     if f != r.hash {
       t.Errorf("hash '%v' not found", r.hash)
-      t.Logf("%v LOH GER", f)
     } else {
       t.Logf("message '%v' tiger192sum '%v' found", r.result, r.hash)
     }
@@ -351,7 +350,6 @@ func TestKECCAK256Message(t *testing.T) {
     f := FoundKECCAK256(r.result)[13:]
     if f != r.hash {
       t.Errorf("hash '%v' not found", r.hash)
-      t.Logf("%v LOH GER", f)
     } else {
       t.Logf("message '%v' keccak256sum '%v' found", r.result, r.hash)
     }

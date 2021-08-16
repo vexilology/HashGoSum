@@ -136,7 +136,7 @@ func FoundSHAKE128_384(input_string string) string {
 func FoundSHAKE128_512(input_string string) string {
   f_Shake128_512 := keccak.NewSHAKE128(64)
   f_Shake128_512.Write([]byte(input_string))
-  return fmt.Sprintf("SHAKE128_512 :: %x\n", f_Shake128_512.Sum(nil))
+  return fmt.Sprintf("SHAKE128_512 :: %x", f_Shake128_512.Sum(nil))
 }
 
 func FoundSHAKE256_224(input_string string) string {
@@ -148,7 +148,7 @@ func FoundSHAKE256_224(input_string string) string {
 func FoundSHAKE256_256(input_string string) string {
   f_SHAKE256_256 := keccak.NewSHAKE256(32)
   f_SHAKE256_256.Write([]byte(input_string))
-  return fmt.Sprintf("SHAKE256_256 :: %x\n", f_SHAKE256_256.Sum(nil))
+  return fmt.Sprintf("SHAKE256_256 :: %x", f_SHAKE256_256.Sum(nil))
 }
 
 func FoundSHAKE256_384(input_string string) string {
